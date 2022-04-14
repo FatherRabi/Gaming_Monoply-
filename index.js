@@ -13,7 +13,7 @@ async function drawLineChart() {
   // Hard-coded education names and order
   const educationNames = [
     "High School",
-    "High School",
+    "Microsoft",
     "Some Post-secondary",
     "Post-secondary",
     "Bachelor and up"
