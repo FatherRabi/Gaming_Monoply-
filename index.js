@@ -1,11 +1,11 @@
  async function drawLineChart() {
 
-  const pathToJSON = './education.json'
+  const pathToJSON = './Developer.json'
   const dataset = await d3.json(pathToJSON)
 
   // Accessor Functions
   const sexAccessor = d => d.sex
-  const sexes = ["female", "male"]
+  const sexes = ["female", "Name"]
   const sexIds = d3.range(sexes.length)
 
   const educationAccessor = d => d.education
