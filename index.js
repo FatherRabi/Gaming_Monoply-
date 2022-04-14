@@ -1,22 +1,22 @@
- async function drawLineChart() {
+async function drawLineChart() {
 
-  const pathToJSON = './Developer.json'
+  const pathToJSON = './CompanyData.json'
   const dataset = await d3.json(pathToJSON)
 
   // Accessor Functions
   const sexAccessor = d => d.sex
-  const sexes = ["female", "Name"]
+  const sexes = ["female", "male"]
   const sexIds = d3.range(sexes.length)
 
   const educationAccessor = d => d.education
 
   // Hard-coded education names and order
   const educationNames = [
-     "Studios",
-     "FirstAnnual",
-     "AcquiredAnnual",
-     "AquiredFor",
-     "AcquiredBy"
+    "High School",
+    "High School",
+    "Some Post-secondary",
+    "Post-secondary",
+    "Bachelor and up"
   ]
   const educationIds = d3.range(educationNames.length)
 
@@ -123,7 +123,7 @@
     .range([0, dimensions.boundedHeight])
 
   const yTransitionProgressScale = d3.scaleLinear()
-    .domain([0.45, 0.55]) // x transition progress 
+    .domain([0.45, 0.55]) // x transition progress
     .range([0, 1])        // y transition progress
     .clamp(true)
 
@@ -170,11 +170,11 @@
   const startLabel = startingLabelsGroup.append("text")
     .attr("class", "start-title")
     .attr("y", startYScale(sesIds[sesIds.length - 1]) - 65)
-    .text("Socioeconomic")
+    .text("Amount")
   const startLabelLineTwo = startingLabelsGroup.append("text")
     .attr("class", "start-title")
     .attr("y", startYScale(sesIds[sesIds.length - 1]) - 50)
-    .text("Status")
+    .text("Gained")
 
   const startingBars = startingLabelsGroup.selectAll(".start-bar")
     .data(sesIds)
@@ -235,7 +235,7 @@
     .attr("transform", "translate(-7, 0)")
   femaleLegend.append("text")
     .attr("class", "legend-text-left")
-    .text("Female")
+    .text("Microsoft")
     .attr("x", -20)
   femaleLegend.append("line")
     .attr("class", "legend-line")
@@ -254,7 +254,7 @@
     .attr("transform", "translate(5, 0)")
   maleLegend.append("text")
     .attr("class", "legend-text-right")
-    .text("Male")
+    .text("Sony")
     .attr("x", 15)
   maleLegend.append("line")
     .attr("class", "legend-line")
