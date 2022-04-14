@@ -21,7 +21,7 @@ async function drawLineChart() {
   const educationIds = d3.range(educationNames.length)
 
   const sesAccessor = d => d.ses
-  const sesNames = ["low", "middle", "high"]
+  const sesNames = ["middle"]
   const sesIds = d3.range(sesNames.length)
 
   const getStatusKey = ({ sex, ses }) => [sex, ses].join("--")
