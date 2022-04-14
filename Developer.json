@@ -1,0 +1,45 @@
+[{
+     "Name": "Activision",
+     "Studios": "5",
+     "FirstAnnual": "$1,500,476",
+     "AcquiredAnnual": "$1,500,476,000",
+     "AquiredFor": "$68,700,000,000",
+     "AcquiredBy": "Microsoft"
+},{
+     "Name": "Bungie",
+     "Studios": "1",
+     "FirstAnnual": "$2,300,476",
+     "AcquiredAnnual": "$2,500,500,000",
+     "AquiredFor": "80,700,000,000",
+     "AcquiredBy": "Sony"
+},{
+     "Name": "Bungie",
+     "Studios": "1",
+     "FirstAnnual": "$2,300,476",
+     "AcquiredAnnual": "$2,500,500,000",
+     "AquiredFor": "80,700,000,000",
+     "AcquiredBy": "Sony"
+},{
+     "Name": "Bungie",
+     "Studios": "1",
+     "FirstAnnual": "$2,300,476",
+     "AcquiredAnnual": "$2,500,500,000",
+     "AquiredFor": "80,700,000,000",
+     "AcquiredBy": "Sony"
+},{
+     "Name": "Bungie",
+     "Studios": "1",
+     "FirstAnnual": "$2,300,476",
+     "AcquiredAnnual": "$2,500,500,000",
+     "AquiredFor": "80,700,000,000",
+     "AcquiredBy": "Sony"
+},{
+    "sex": "female",
+    "ses": "high",
+    "<High School": 0,
+    "High School": 1.8,
+    "Some Post-secondary": 20.1,
+    "Post-secondary": 6.2,
+    "Associate’s": 5.9,
+    "Bachelor’s and up": 65.7
+}]
