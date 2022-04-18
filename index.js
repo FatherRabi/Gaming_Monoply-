@@ -238,7 +238,6 @@ async function drawLineChart() {
     .text("Microsoft")
     .attr("x", -20)
   femaleLegend.append("line")
-    .attr("class", "legend-line")
     .attr("x1", -dimensions.endsBarWidth / 2 + 1)
     .attr("x2", -dimensions.endsBarWidth / 2 + 1)
     .attr("y1", 12)
@@ -257,7 +256,6 @@ async function drawLineChart() {
     .text("Sony")
     .attr("x", 15)
   maleLegend.append("line")
-    .attr("class", "legend-line")
     .attr("x1", dimensions.endsBarWidth / 2 - 3)
     .attr("x2", dimensions.endsBarWidth / 2 - 3)
     .attr("y1", 12)
@@ -367,27 +365,7 @@ async function drawLineChart() {
       ))
     )
 
-    // Draw our ending bars
-    endingBarGroup.selectAll(".ending-bar")
-      .data(endingPercentages)
-      .join("rect")
-      .attr("class", "ending-bar")
-      .attr("x", d => -dimensions.endsBarWidth * (d.sexId + 1)
-        - (d.sexId * dimensions.endingBarPadding)
-      )
-      .attr("width", dimensions.endsBarWidth)
-      .attr("y", d => endYScale(d.endingId)
-        - dimensions.pathHeight / 2
-        + dimensions.pathHeight * d.percentAbove
-      )
-      .attr("height", d => d.countInBar
-        ? dimensions.pathHeight * d.percent
-        : dimensions.pathHeight
-      )
-      .attr("fill", d => d.countInBar
-        ? colorScale(d.sesId)
-        : "#dadadd"
-      )
+
 
     // Draw the ending values
     endingLabelsGroup.selectAll(".ending-value")
