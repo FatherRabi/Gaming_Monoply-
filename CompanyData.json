@@ -17,20 +17,20 @@
 },{
     "sex": "male",
     "ses": "middle",
-    "High School": 17.3,
-    "Some Post-secondary": 36.5,
-    "Post-secondary": 10.1,
+    "Indie": 17.3,
+    "THQ": 36.5,
+    "Sony": 10.1,
     "Associate’s": 8.6,
-    "Bachelor’s and up": 24.8
+    "Other": 24.8
 },{
     "sex": "female",
     "ses": "middle",
     "Microsoft": 2.4,
-    "High School": 8.9,
-    "Some Post-secondary": 32.9,
-    "Post-secondary": 12.1,
+    "Indie": 8.9,
+    "THQ": 32.9,
+    "Sony": 12.1,
     "Associate’s": 11.0,
-    "Bachelor’s and up": 32.8
+    "Other": 32.8
 },{
     "sex": "male",
     "ses": "high",

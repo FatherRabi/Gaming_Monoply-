@@ -12,11 +12,11 @@ async function drawLineChart() {
 
   // Hard-coded education names and order
   const educationNames = [
-    "High School",
-    "Microsoft",
-    "Some Post-secondary",
-    "Post-secondary",
-    "Bachelor and up"
+    "Other",
+    "Sony",
+    "THQ",
+    "Indie",
+    "Microsoft"
   ]
   const educationIds = d3.range(educationNames.length)
 
@@ -235,7 +235,7 @@ async function drawLineChart() {
     .attr("transform", "translate(-7, 0)")
   femaleLegend.append("text")
     .attr("class", "legend-text-left")
-    .text("Microsoft")
+    .text("Bungie")
     .attr("x", -20)
   femaleLegend.append("line")
     .attr("x1", -dimensions.endsBarWidth / 2 + 1)
@@ -253,7 +253,7 @@ async function drawLineChart() {
     .attr("transform", "translate(5, 0)")
   maleLegend.append("text")
     .attr("class", "legend-text-right")
-    .text("Sony")
+    .text("Activision")
     .attr("x", 15)
   maleLegend.append("line")
     .attr("x1", dimensions.endsBarWidth / 2 - 3)
