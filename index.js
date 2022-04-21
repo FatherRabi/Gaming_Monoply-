@@ -217,7 +217,7 @@ async function drawLineChart() {
     .enter().append("polygon")
     .attr("class", "ending-marker female-marker")
     .attr("points", trianglePoints)
-    .attr("transform", d => `translate(5, ${endYScale(d) + 20})`)
+    .attr("transform", d => `translate(+5, ${endYScale(d) + 15})`)
 
   // Create our legend container
   const legendGroup = bounds.append("g")
@@ -373,7 +373,7 @@ async function drawLineChart() {
       .join("text")
       .attr("class", "ending-value")
       .attr("x", d => (d.sesId) * 33
-        + 47
+        + 89
       )
       .attr("y", d => endYScale(d.endingId)
         - dimensions.pathHeight / 2
