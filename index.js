@@ -129,7 +129,7 @@ async function drawLineChart() {
 
   const colorScale = d3.scaleLinear()
     .domain(d3.extent(sesIds))
-    .range(["#12CBC4", "#B53471"])
+    .range(["#FFA500", "#B53471"])
     .interpolate(d3.interpolateHcl)
 
   // Draw data
@@ -173,7 +173,7 @@ async function drawLineChart() {
     .text("Amount")
   const startLabelLineTwo = startingLabelsGroup.append("text")
     .attr("class", "start-title")
-    .attr("y", startYScale(sesIds[sesIds.length - 1]) - 50)
+    .attr("y", startYScale(sesIds[sesIds.length - 1]) - 35)
     .text("Gained")
 
   const startingBars = startingLabelsGroup.selectAll(".start-bar")
@@ -194,7 +194,7 @@ async function drawLineChart() {
     .data(educationNames)
     .enter().append("text")
     .attr("class", "label end-label")
-    .attr("y", (d, i) => endYScale(i) - 15)
+    .attr("y", (d, i) => endYScale(i) - 20)
     .text(d => d)
 
   // Represent males on the chart using circles
@@ -203,7 +203,7 @@ async function drawLineChart() {
     .enter().append("circle")
     .attr("class", "ending-marker male-marker")
     .attr("r", 5.5)
-    .attr("cx", 5)
+    .attr("cx",  - 5)
     .attr("cy", d => endYScale(d) + 5)
 
   // Represent females on the chart using triangles
