@@ -206,7 +206,16 @@ async function drawLineChart() {
     .attr("cx",  - 5)
     .attr("cy", d => endYScale(d) + 5)
 
-  // Represent females on the chart using triangles
+  // Represent Misc on the chart using squares
+  const otherMarkers = endingLabelsGroup.selectAll(".other-marker")
+    .data(educationIds)
+    .enter().append("rect")
+    .attr("class", "ending-marker other-marker")
+    .attr("width",10)
+    .attr("height",10)
+    .attr("transform", d => `translate(+5, ${endYScale(d) + 30})`)
+
+    // Represent females on the chart using triangles
   const trianglePoints = [  // [0,0] is the starting point
     "-7,  6",
     " 0, -6",
@@ -254,15 +263,39 @@ async function drawLineChart() {
   maleLegend.append("text")
     .attr("class", "legend-text-right")
     .text("Activision")
-    .attr("x", 15)
+    .attr("x", 17)
   maleLegend.append("line")
+    .attr("x1", dimensions.endsBarWidth / 2 - 3)
+    .attr("x2", dimensions.endsBarWidth / 2 - 3)
+    .attr("y1", 12)
+    .attr("y2", 40)
+
+  // Misc marker
+  const OtherLegend = legendGroup.append("g")
+    .attr("transform", `translate(${
+      - dimensions.endsBarWidth * 1.5
+      + dimensions.endingBarPadding
+      + 1
+      }, 0)`)
+  OtherLegend.append("rect")
+    .attr("height",10 )
+    .attr("width",10)
+    .attr("x",140)
+    .attr("y", -5)
+    .attr("transform", "translate(-7, 0)")
+  OtherLegend.append("text")
+    .attr("class", "legend-text-right")
+    .text("Misc")
+    .attr("x", 145)
+  OtherLegend.append("line")
     .attr("x1", dimensions.endsBarWidth / 2 - 3)
     .attr("x2", dimensions.endsBarWidth / 2 - 3)
     .attr("y1", 12)
     .attr("y2", 37)
 
+
   // Set up interactions
-  const maximumPeople = 10000
+  const maximumPeople = 500
   let people = []
   const markersGroup = bounds.append("g")
     .attr("class", "markers-group")
@@ -302,6 +335,19 @@ async function drawLineChart() {
       .attr("points", trianglePoints)
       .style("opacity", 0)
     males.exit().remove()
+
+   //Misc
+   const other = markersGroup.selectAll(".marker-other")
+       .data(people.filter(d => (
+         xProgressAccessor(d) < 1
+         && sexAccessor(d) == 1
+       )), d => d.id)
+    other.enter().append("rect")
+      .attr("class", "marker marker-other")
+      .attr("height",10)
+      .attr("weight",10)
+      .style("opacity",0)
+    other.exit().remove()
 
     const markers = d3.selectAll(".marker")
 
