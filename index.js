@@ -5,7 +5,7 @@ async function drawLineChart() {
 
   // Accessor Functions
   const sexAccessor = d => d.sex
-  const sexes = ["female", "male"]
+  const sexes = ["female", "male","misc"]
   const sexIds = d3.range(sexes.length)
 
   const educationAccessor = d => d.education
@@ -129,7 +129,7 @@ async function drawLineChart() {
 
   const colorScale = d3.scaleLinear()
     .domain(d3.extent(sesIds))
-    .range(["#FFA500", "#B53471"])
+    .range(["#FFA500", "#B53471","#B53834"])
     .interpolate(d3.interpolateHcl)
 
   // Draw data
@@ -207,10 +207,10 @@ async function drawLineChart() {
     .attr("cy", d => endYScale(d) + 5)
 
   // Represent Misc on the chart using squares
-  const otherMarkers = endingLabelsGroup.selectAll(".other-marker")
+  const miscMarkers = endingLabelsGroup.selectAll(".misc-marker")
     .data(educationIds)
     .enter().append("rect")
-    .attr("class", "ending-marker other-marker")
+    .attr("class", "ending-marker misc-marker")
     .attr("width",10)
     .attr("height",10)
     .attr("transform", d => `translate(+5, ${endYScale(d) + 30})`)
@@ -271,23 +271,23 @@ async function drawLineChart() {
     .attr("y2", 40)
 
   // Misc marker
-  const OtherLegend = legendGroup.append("g")
+  const miscLegend = legendGroup.append("g")
     .attr("transform", `translate(${
       - dimensions.endsBarWidth * 1.5
       + dimensions.endingBarPadding
       + 1
       }, 0)`)
-  OtherLegend.append("rect")
+  miscLegend.append("rect")
     .attr("height",10 )
     .attr("width",10)
     .attr("x",140)
     .attr("y", -5)
     .attr("transform", "translate(-7, 0)")
-  OtherLegend.append("text")
+  miscLegend.append("text")
     .attr("class", "legend-text-right")
     .text("Misc")
     .attr("x", 145)
-  OtherLegend.append("line")
+  miscLegend.append("line")
     .attr("x1", dimensions.endsBarWidth / 2 - 3)
     .attr("x2", dimensions.endsBarWidth / 2 - 3)
     .attr("y1", 12)
@@ -308,7 +308,7 @@ async function drawLineChart() {
     if (people.length < maximumPeople) {
       people = [
         ...people,
-        ...d3.range(2).map(() => generatePerson(elapsed)),
+        ...d3.range(3).map(() => generatePerson(elapsed)),
       ]
     }
 
@@ -336,18 +336,18 @@ async function drawLineChart() {
       .style("opacity", 0)
     males.exit().remove()
 
-   //Misc
-   const other = markersGroup.selectAll(".marker-other")
-       .data(people.filter(d => (
-         xProgressAccessor(d) < 1
-         && sexAccessor(d) == 1
-       )), d => d.id)
-    other.enter().append("rect")
-      .attr("class", "marker marker-other")
-      .attr("height",10)
-      .attr("weight",10)
-      .style("opacity",0)
-    other.exit().remove()
+    //Misc
+    const misc = markersGroup.selectAll(".marker-misc")
+      .data(people.filter(d => (
+        xProgressAccessor(d) < 1
+        && sexAccessor(d) == 2
+      )), d => d.id)
+    misc.enter().append("rect")
+       .attr("class", "marker marker-misc")
+       .attr("height",10)
+       .attr("width",10)
+       .style("opacity",0)
+    misc.exit().remove()
 
     const markers = d3.selectAll(".marker")
 
