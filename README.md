@@ -3,5 +3,5 @@ _**By: Felix Rabinovich and Ethan Lewis**_
 
 
 ## Description ##
-## Instilations Directions ##
+## Installation Directions ##
 
