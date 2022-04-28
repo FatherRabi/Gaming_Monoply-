@@ -1,6 +1,6 @@
-## Gaming Monopoly ##
+## Gaming Monopoly _**Intro to visualization final porject**_ ##
 _**By: Felix Rabinovich and Ethan Lewis**_
-_**Intro to visualization final porject**_
+
 
 ## Description ##
 ## Instilations Directions ##
