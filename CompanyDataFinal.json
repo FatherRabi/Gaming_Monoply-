@@ -1,0 +1,57 @@
+[{
+   "name":"Bungie",
+   "acquired":"sony",
+   "initprice":"",
+   "acqrev":200,
+   "acqprice":3.0,
+   "numgames":1,
+   "numstudios":1
+},{
+   "name":"activison",
+   "acquired":"microsoft",
+   "year1profit":"780",
+   "acqrev":200,
+   "acqprice":68.7,
+   "numgames":7,
+   "numstudios":3
+},{
+   "name":"insomniac",
+   "acquired":"sony",
+   "initprice":"",
+   "acqrev":200,
+   "acqprice":68.7,
+   "numgames":3,
+   "numstudios":1
+},{
+   "name":"ubisoft",
+   "acquired":"other",
+   "initprice":"",
+   "acqrev":200,
+   "acqprice":68.7,
+   "numgames":7,
+   "numstudios":3
+},{
+   "name":"teamcherry",
+   "acquired":"indie",
+   "initprice":"",
+   "acqrev":0,
+   "acqprice":,
+   "numgames":7,
+   "numstudios":3
+},{
+   "name":"bethesda",
+   "acquired":"microsoft",
+   "initprice":"",
+   "acqrev":200,
+   "acqprice":68.7,
+   "numgames":7,
+   "numstudios":3
+},{
+   "name":"vigilgames",
+   "acquired":"thq",
+   "initprice":"",
+   "acqrev":200,
+   "acqprice":68.7,
+   "numgames":7,
+   "numstudios":3
+}]

@@ -337,16 +337,24 @@ async function drawLineChart() {
     males.exit().remove()
 
     //Misc
-    const misc = markersGroup.selectAll(".marker-misc")
-      .data(people.filter(d => (
-        xProgressAccessor(d) < 1
-        && sexAccessor(d) == 2
-      )), d => d.id)
-    misc.enter().append("rect")
-       .attr("class", "marker marker-misc")
+    const misc = markersGroup.selectAll(".marker-rect")
+      .data([{
+        "sex": "female",
+        "ses": "low",
+        "High School": 17.1,
+        "Some Post-secondary": 36.2,
+        "Post-secondary": 16.0,
+        "Associate’s": 9.3,
+        "Bachelor’s and up": 15.9,
+        "startTime": 500
+
+      }])
+      .enter().append("rect")
+       .attr("class", "marker marker-rect")
        .attr("height",10)
        .attr("width",10)
-       .style("opacity",0)
+        .attr('fill','blue')
+       .style("opacity", 1)
     misc.exit().remove()
 
     const markers = d3.selectAll(".marker")
